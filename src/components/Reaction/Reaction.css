@@ -1,0 +1,220 @@
+.reaction{
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.reaction-div{
+    transition: all 0.5s ease-out;
+    border-style: none;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+    font-size: 18px;
+    position: relative;
+    display: block;
+    z-index: 0;
+    position: relative;
+}
+
+.reaction-div:hover{
+    cursor: pointer;
+}
+
+.like-button{
+    background-color: #ACE1AF;
+    color: #1CAC78;
+    box-sizing: border-box;
+    order: 1;
+}
+
+.dislike-button{
+    background-color: #e88080;
+    color: #990000;
+    box-sizing: border-box;
+    order: 3; 
+}
+
+.like-button:hover{
+    background-color: #1CAC78;
+    color: #ACE1AF;
+}
+
+.dislike-button:hover{
+    background-color: #990000;
+    color: #e88080;
+}
+
+.disabled{
+    pointer-events: none;
+}
+
+.like-clicked{
+    background-color: #1CAC78;
+    color: #ACE1AF;
+}
+
+.dislike-clicked{
+    background-color: #990000;
+    color: #e88080;
+}
+.container{
+    position: relative;
+}
+
+.comment-action{
+    font-size: 12px;
+}
+
+.comment-container{
+    padding-left: 3px;
+    padding-right: 3px;
+    min-height: fit-content;
+    order: 2;
+    box-sizing: border-box;
+    width: max-content;
+}
+
+@media screen and (max-width: 1200px) {
+
+    .comment-container{
+        order: 3;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .like-button {
+        order: 1;
+      }
+
+    .dislike-button {
+        order: 2;
+    }
+    
+}
+
+.comment-container:hover{
+    background-color: 	#404040;
+    cursor: pointer;
+    border-style: none;
+    border-radius: 2px;
+}
+
+.feedback{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: -1;
+    width: 100%;
+}
+
+.show-feedback{
+    z-index: 1;
+    animation: appear 0.5s ease-out;
+}
+
+@keyframes appear{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.feedback-input{
+    width: 100%;
+    height: 34px;
+    padding: 0 10px 0 10px;
+    background-color: #e8808029;
+    color: white;
+    font-size: 14px;
+    border-radius: 2px;
+    border-style: none;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.feedback-input:focus{
+    outline-style: solid;
+    outline-color: #0000FF;
+    outline-width: 1px;
+}
+
+.send-or-cancel{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.send-or-cancel span{
+    font-size: 14px;
+    color: 	#888888;
+    cursor: pointer;
+}
+
+.feedback-submit{
+    background-color: #e8808029;
+    color: #e88080;
+    font-size: 14px;
+    height: 34px;
+    border-style: none;
+    border-radius: 34px;
+    padding: 5px 14px 5px 14px;
+    transition: color .3s var(--n-bezier),
+    background-color .3s var(--n-bezier),
+    opacity .3s var(--n-bezier),
+    border-color .3s var(--n-bezier);
+    
+}
+
+.feedback-submit:hover{
+    background-color: #e880801b;
+    color: #e88080;
+    cursor: pointer;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    font-size: 10px;
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+    border-radius: 3px;
+    position: absolute;
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 0.3s;
+    width: max-content;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.tooltiptext-position-left{
+    bottom: 85%;
+    left: 100%;
+    background-color: #ace1ae32;
+    color: #1CAC78;
+}
+
+.tooltiptext-position-right{
+    bottom: 85%;
+    right: 100%;
+    background-color: #e880801b;
+    color: #e88080;
+    
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
